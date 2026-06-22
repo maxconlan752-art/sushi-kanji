@@ -1,0 +1,880 @@
+<!DOCTYPE html>
+<!-- saved from url=(0054)file:///C:/Users/Alumne1x1/Downloads/sushi-kanji.html# -->
+<html lang="ca"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sushi Kanji — Cuina Japonesa, Caldes de Montbui</title>
+<meta name="description" content="Sushi Kanji: cuina japonesa de qualitat en un ambient elegant i tranquil. Nigiri, sashimi i plats a la carta a Caldes de Montbui.">
+
+<link rel="preconnect" href="https://fonts.googleapis.com/">
+<link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin="">
+<link href="./Sushi Kanji — Cuina Japonesa, Caldes de Montbui_files/css2" rel="stylesheet">
+
+<style>
+  :root{
+    --ink:#15130f;
+    --panel:#1f1b16;
+    --panel-2:#241f19;
+    --brass:#c9a36a;
+    --brass-soft:#a98654;
+    --cream:#ece3d0;
+    --cream-dim:#bdb19a;
+    --lacquer:#8a2e2a;
+    --moss:#3d4a3e;
+    --hairline:rgba(201,163,106,0.18);
+
+    --display:'Cormorant', serif;
+    --body:'Sora', sans-serif;
+    --mono:'DM Mono', monospace;
+  }
+
+  *{margin:0;padding:0;box-sizing:border-box;}
+
+  html{scroll-behavior:smooth;}
+
+  body{
+    background:var(--ink);
+    color:var(--cream);
+    font-family:var(--body);
+    font-weight:300;
+    line-height:1.6;
+    overflow-x:hidden;
+  }
+
+  ::selection{background:var(--brass);color:var(--ink);}
+
+  a{color:inherit;text-decoration:none;}
+
+  img{max-width:100%;display:block;}
+
+  .wrap{max-width:1180px;margin:0 auto;padding:0 32px;}
+
+  @media (max-width:640px){.wrap{padding:0 20px;}}
+
+  /* texture */
+  body::before{
+    content:'';
+    position:fixed;inset:0;
+    background-image:
+      radial-gradient(circle at 20% 20%, rgba(201,163,106,0.05), transparent 40%),
+      radial-gradient(circle at 80% 70%, rgba(138,46,42,0.06), transparent 45%);
+    pointer-events:none;
+    z-index:0;
+  }
+
+  /* ---------- focus ---------- */
+  a:focus-visible, button:focus-visible{
+    outline:1.5px solid var(--brass);
+    outline-offset:3px;
+  }
+
+  /* ---------- nav ---------- */
+  header{
+    position:fixed;top:0;left:0;right:0;
+    z-index:100;
+    padding:22px 0;
+    transition:background 0.4s ease, padding 0.4s ease, border-color .4s ease;
+    border-bottom:1px solid transparent;
+  }
+  header.scrolled{
+    background:rgba(21,19,15,0.92);
+    backdrop-filter:blur(10px);
+    padding:14px 0;
+    border-bottom:1px solid var(--hairline);
+  }
+  nav{display:flex;align-items:center;justify-content:space-between;}
+  .brand{
+    font-family:var(--display);
+    font-size:1.5rem;
+    letter-spacing:0.12em;
+    font-weight:500;
+    display:flex;align-items:center;gap:10px;
+  }
+  .brand .mark{color:var(--brass);font-size:1.7rem;}
+  .nav-links{display:flex;gap:38px;font-size:0.82rem;letter-spacing:0.08em;text-transform:uppercase;}
+  .nav-links a{position:relative;padding-bottom:4px;color:var(--cream-dim);transition:color .3s;}
+  .nav-links a:hover{color:var(--brass);}
+  .nav-links a::after{
+    content:'';position:absolute;left:0;bottom:0;width:0;height:1px;background:var(--brass);
+    transition:width .3s ease;
+  }
+  .nav-links a:hover::after{width:100%;}
+  .nav-cta{
+    border:1px solid var(--brass-soft);
+    padding:10px 22px;
+    font-size:0.78rem;
+    letter-spacing:0.1em;
+    text-transform:uppercase;
+    color:var(--brass);
+    transition:background .3s, color .3s;
+    white-space:nowrap;
+  }
+  .nav-cta:hover{background:var(--brass);color:var(--ink);}
+  .nav-toggle{display:none;background:none;border:none;color:var(--cream);font-size:1.6rem;cursor:pointer;}
+
+  @media (max-width:880px){
+    .nav-links{display:none;}
+    .nav-toggle{display:block;}
+  }
+
+  /* ---------- hero ---------- */
+  .hero{
+    position:relative;
+    min-height:100vh;
+    display:flex;
+    align-items:center;
+    padding:140px 0 80px;
+    overflow:hidden;
+  }
+  .hero-bg{
+    position:absolute;inset:0;
+    background:
+      linear-gradient(180deg, rgba(21,19,15,0.4) 0%, rgba(21,19,15,0.75) 55%, var(--ink) 100%),
+      url('https://images.unsplash.com/photo-1583623025817-d180a2221d0a?q=80&w=1600&auto=format&fit=crop') center 30%/cover no-repeat;
+    z-index:0;
+  }
+  .hero-kanji{
+    position:absolute;
+    right:-40px;top:50%;
+    transform:translateY(-50%);
+    font-size:min(48vw, 620px);
+    font-family:var(--display);
+    color:rgba(236,227,208,0.035);
+    line-height:1;
+    z-index:1;
+    pointer-events:none;
+    user-select:none;
+  }
+  .hero-content{position:relative;z-index:2;max-width:680px;}
+  .eyebrow{
+    font-family:var(--mono);
+    font-size:0.78rem;
+    letter-spacing:0.25em;
+    text-transform:uppercase;
+    color:var(--brass);
+    display:flex;align-items:center;gap:14px;
+    margin-bottom:26px;
+    opacity:0;
+    animation:fadeUp .9s ease forwards .2s;
+  }
+  .eyebrow::before{content:'';width:32px;height:1px;background:var(--brass-soft);}
+  .hero h1{
+    font-family:var(--display);
+    font-weight:500;
+    font-size:clamp(3.2rem, 8vw, 6.4rem);
+    line-height:0.98;
+    letter-spacing:0.01em;
+    color:var(--cream);
+    margin-bottom:8px;
+    opacity:0;
+    animation:fadeUp 1s ease forwards .4s;
+  }
+  .hero h1 em{
+    font-style:italic;
+    color:var(--brass);
+    font-weight:400;
+  }
+  .stroke-rule{
+    width:220px;height:14px;
+    margin:18px 0 30px;
+    opacity:0;
+    animation:fadeUp 1s ease forwards .65s;
+  }
+  .stroke-rule path{
+    stroke:var(--brass);
+    stroke-width:1.4;
+    fill:none;
+    stroke-dasharray:300;
+    stroke-dashoffset:300;
+    animation:draw 1.4s ease forwards 1s;
+  }
+  .hero p.lede{
+    font-size:1.12rem;
+    color:var(--cream-dim);
+    max-width:480px;
+    margin-bottom:38px;
+    font-weight:300;
+    opacity:0;
+    animation:fadeUp 1s ease forwards .8s;
+  }
+  .hero-ctas{
+    display:flex;gap:18px;align-items:center;flex-wrap:wrap;
+    opacity:0;
+    animation:fadeUp 1s ease forwards 1s;
+  }
+  .btn-primary{
+    background:var(--brass);
+    color:var(--ink);
+    padding:16px 34px;
+    font-size:0.82rem;
+    letter-spacing:0.1em;
+    text-transform:uppercase;
+    font-weight:500;
+    transition:transform .35s ease, box-shadow .35s ease, background .35s;
+    box-shadow:0 0 0 0 rgba(201,163,106,0.5);
+  }
+  .btn-primary:hover{
+    transform:translateY(-2px);
+    box-shadow:0 12px 28px -8px rgba(201,163,106,0.5);
+  }
+  .btn-ghost{
+    color:var(--cream);
+    font-size:0.82rem;
+    letter-spacing:0.1em;
+    text-transform:uppercase;
+    padding-bottom:4px;
+    border-bottom:1px solid var(--cream-dim);
+    transition:border-color .3s, color .3s;
+  }
+  .btn-ghost:hover{color:var(--brass);border-color:var(--brass);}
+
+  .hero-rating{
+    position:absolute;
+    bottom:48px;left:50%;
+    transform:translateX(-50%);
+    z-index:2;
+    display:flex;
+    gap:40px;
+    align-items:center;
+    font-family:var(--mono);
+    font-size:0.75rem;
+    letter-spacing:0.05em;
+    color:var(--cream-dim);
+    opacity:0;
+    animation:fadeUp 1s ease forwards 1.3s;
+  }
+  .hero-rating .stat{text-align:center;}
+  .hero-rating .stat b{display:block;color:var(--brass);font-family:var(--display);font-size:1.5rem;font-weight:500;}
+  .hero-rating .div{width:1px;height:30px;background:var(--hairline);}
+
+  @media (max-width:640px){
+    .hero{padding-top:120px;}
+    .hero-rating{display:none;}
+    .hero-kanji{font-size:80vw;opacity:0.5;}
+  }
+
+  @keyframes fadeUp{
+    from{opacity:0;transform:translateY(18px);}
+    to{opacity:1;transform:translateY(0);}
+  }
+  @keyframes draw{to{stroke-dashoffset:0;}}
+
+  /* ---------- section scaffolding ---------- */
+  section{position:relative;z-index:1;padding:140px 0;}
+  @media (max-width:640px){section{padding:90px 0;}}
+
+  .section-head{
+    display:flex;
+    justify-content:space-between;
+    align-items:flex-end;
+    gap:40px;
+    margin-bottom:64px;
+    flex-wrap:wrap;
+  }
+  .section-eyebrow{
+    font-family:var(--mono);
+    font-size:0.75rem;
+    letter-spacing:0.22em;
+    text-transform:uppercase;
+    color:var(--brass);
+    margin-bottom:18px;
+    display:flex;align-items:center;gap:14px;
+  }
+  .section-eyebrow::before{content:'';width:24px;height:1px;background:var(--brass-soft);}
+  .section-head h2{
+    font-family:var(--display);
+    font-weight:500;
+    font-size:clamp(2.2rem, 4vw, 3.4rem);
+    color:var(--cream);
+    max-width:560px;
+    line-height:1.08;
+  }
+  .section-head p{
+    max-width:340px;
+    color:var(--cream-dim);
+    font-size:0.98rem;
+    padding-bottom:6px;
+  }
+
+  .reveal{opacity:0;transform:translateY(28px);transition:opacity .8s ease, transform .8s ease;}
+  .reveal.in{opacity:1;transform:translateY(0);}
+
+  /* ---------- philosophy / strengths ---------- */
+  .philosophy{background:var(--panel);}
+  .phil-grid{
+    display:grid;
+    grid-template-columns:repeat(3, 1fr);
+    gap:1px;
+    background:var(--hairline);
+    border:1px solid var(--hairline);
+  }
+  @media (max-width:880px){.phil-grid{grid-template-columns:1fr;}}
+  .phil-card{
+    background:var(--panel);
+    padding:48px 38px;
+    transition:background .4s ease;
+  }
+  .phil-card:hover{background:var(--panel-2);}
+  .phil-num{
+    font-family:var(--mono);
+    color:var(--brass-soft);
+    font-size:0.78rem;
+    letter-spacing:0.1em;
+    margin-bottom:28px;
+    display:block;
+  }
+  .phil-card h3{
+    font-family:var(--display);
+    font-size:1.7rem;
+    font-weight:500;
+    color:var(--cream);
+    margin-bottom:16px;
+  }
+  .phil-card p{
+    color:var(--cream-dim);
+    font-size:0.96rem;
+    line-height:1.7;
+  }
+
+  /* ---------- menu ---------- */
+  .menu-section{background:var(--ink);}
+  .menu-columns{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:60px 80px;
+  }
+  @media (max-width:880px){.menu-columns{grid-template-columns:1fr;gap:56px;}}
+
+  .menu-cat-title{
+    font-family:var(--display);
+    font-style:italic;
+    font-size:1.5rem;
+    color:var(--brass);
+    margin-bottom:28px;
+    padding-bottom:14px;
+    border-bottom:1px solid var(--hairline);
+  }
+  .menu-item{
+    display:flex;
+    justify-content:space-between;
+    gap:18px;
+    padding:16px 0;
+    border-bottom:1px dashed rgba(201,163,106,0.12);
+  }
+  .menu-item:last-child{border-bottom:none;}
+  .menu-item-name{
+    font-size:1.02rem;
+    color:var(--cream);
+    font-weight:400;
+    margin-bottom:4px;
+  }
+  .menu-item-desc{
+    font-size:0.85rem;
+    color:var(--cream-dim);
+    font-weight:300;
+  }
+  .menu-item-price{
+    font-family:var(--mono);
+    color:var(--brass);
+    font-size:0.95rem;
+    white-space:nowrap;
+    align-self:flex-start;
+    padding-top:2px;
+  }
+  .menu-note{
+    margin-top:50px;
+    padding-top:30px;
+    border-top:1px solid var(--hairline);
+    color:var(--cream-dim);
+    font-size:0.88rem;
+    font-family:var(--mono);
+    letter-spacing:0.02em;
+  }
+
+  /* ---------- gallery strip ---------- */
+  .gallery{background:var(--panel);padding:0;}
+  .gallery-track{
+    display:flex;
+    gap:2px;
+  }
+  .gallery-track figure{
+    flex:1;
+    aspect-ratio:3/4;
+    overflow:hidden;
+    position:relative;
+    margin:0;
+  }
+  .gallery-track img{
+    width:100%;height:100%;object-fit:cover;
+    transition:transform .8s cubic-bezier(.2,.8,.2,1), filter .6s ease;
+    filter:saturate(0.85) brightness(0.85);
+  }
+  .gallery-track figure:hover img{transform:scale(1.06);filter:saturate(1) brightness(0.95);}
+  .gallery-track figcaption{
+    position:absolute;left:0;right:0;bottom:0;
+    padding:22px 18px;
+    background:linear-gradient(0deg, rgba(15,13,10,0.85), transparent);
+    font-family:var(--mono);
+    font-size:0.72rem;
+    letter-spacing:0.08em;
+    text-transform:uppercase;
+    color:var(--cream);
+  }
+  @media (max-width:880px){
+    .gallery-track{flex-wrap:wrap;}
+    .gallery-track figure{flex-basis:calc(50% - 1px);aspect-ratio:1/1;}
+  }
+
+  /* ---------- testimonials ---------- */
+  .testimonials{background:var(--ink);}
+  .test-rail{
+    display:flex;
+    gap:1px;
+    background:var(--hairline);
+    border:1px solid var(--hairline);
+  }
+  @media (max-width:980px){.test-rail{flex-direction:column;}}
+  .test-card{
+    background:var(--panel);
+    flex:1;
+    padding:42px 34px;
+    display:flex;
+    flex-direction:column;
+    justify-content:space-between;
+  }
+  .test-quote{
+    font-family:var(--display);
+    font-size:1.3rem;
+    font-style:italic;
+    color:var(--cream);
+    line-height:1.5;
+    margin-bottom:32px;
+  }
+  .test-quote .qm{color:var(--brass);font-size:1.6rem;line-height:0;vertical-align:-6px;}
+  .test-author{
+    display:flex;justify-content:space-between;align-items:center;
+    font-family:var(--mono);
+    font-size:0.78rem;
+    color:var(--cream-dim);
+    padding-top:18px;
+    border-top:1px solid var(--hairline);
+  }
+  .test-author .stars{color:var(--brass);letter-spacing:2px;}
+
+  /* ---------- visit / map / hours ---------- */
+  .visit{background:var(--panel);}
+  .visit-grid{
+    display:grid;
+    grid-template-columns:1.1fr 0.9fr;
+    gap:0;
+    border:1px solid var(--hairline);
+  }
+  @media (max-width:880px){.visit-grid{grid-template-columns:1fr;}}
+  .visit-info{
+    padding:64px 56px;
+    background:var(--panel-2);
+  }
+  @media (max-width:640px){.visit-info{padding:44px 28px;}}
+  .visit-info h2{
+    font-family:var(--display);
+    font-size:clamp(2rem, 3.4vw, 2.8rem);
+    font-weight:500;
+    color:var(--cream);
+    margin-bottom:32px;
+  }
+  .visit-row{
+    display:flex;
+    gap:22px;
+    padding:20px 0;
+    border-bottom:1px solid var(--hairline);
+  }
+  .visit-row:last-of-type{border-bottom:none;}
+  .visit-label{
+    font-family:var(--mono);
+    font-size:0.72rem;
+    text-transform:uppercase;
+    letter-spacing:0.1em;
+    color:var(--brass);
+    width:110px;
+    flex-shrink:0;
+    padding-top:2px;
+  }
+  .visit-value{color:var(--cream-dim);font-size:0.96rem;}
+  .visit-value strong{color:var(--cream);font-weight:500;}
+  .visit-cta{margin-top:38px;}
+
+  .visit-map{
+    position:relative;
+    min-height:420px;
+    background:var(--ink);
+  }
+  .visit-map iframe{
+    width:100%;height:100%;
+    position:absolute;inset:0;
+    border:0;
+    filter:grayscale(0.4) invert(0.92) contrast(0.9);
+  }
+
+  /* ---------- final cta ---------- */
+  .final-cta{
+    text-align:center;
+    padding:160px 0;
+    position:relative;
+  }
+  .final-cta-kanji{
+    position:absolute;left:50%;top:50%;
+    transform:translate(-50%,-50%);
+    font-family:var(--display);
+    font-size:min(60vw,500px);
+    color:rgba(201,163,106,0.04);
+    z-index:0;
+    pointer-events:none;
+  }
+  .final-cta-inner{position:relative;z-index:1;}
+  .final-cta h2{
+    font-family:var(--display);
+    font-weight:500;
+    font-size:clamp(2.6rem, 6vw, 4.6rem);
+    color:var(--cream);
+    margin-bottom:28px;
+    line-height:1.05;
+  }
+  .final-cta h2 em{color:var(--brass);font-style:italic;font-weight:400;}
+  .final-cta p{color:var(--cream-dim);max-width:460px;margin:0 auto 44px;}
+
+  /* ---------- footer ---------- */
+  footer{
+    border-top:1px solid var(--hairline);
+    padding:56px 0 36px;
+  }
+  .footer-grid{
+    display:flex;
+    justify-content:space-between;
+    align-items:flex-start;
+    flex-wrap:wrap;
+    gap:32px;
+    margin-bottom:40px;
+  }
+  .footer-brand{
+    font-family:var(--display);
+    font-size:1.3rem;
+    letter-spacing:0.1em;
+    color:var(--cream);
+  }
+  .footer-brand span{color:var(--brass);}
+  .footer-links{
+    display:flex;gap:36px;
+    font-size:0.82rem;
+    color:var(--cream-dim);
+  }
+  .footer-links a:hover{color:var(--brass);}
+  .footer-bottom{
+    display:flex;justify-content:space-between;
+    font-family:var(--mono);
+    font-size:0.72rem;
+    color:var(--cream-dim);
+    opacity:0.6;
+    padding-top:28px;
+    border-top:1px solid var(--hairline);
+    flex-wrap:wrap;
+    gap:10px;
+  }
+
+  @media (prefers-reduced-motion: reduce){
+    *{animation-duration:0.01ms !important; animation-iteration-count:1 !important; transition-duration:0.01ms !important; scroll-behavior:auto !important;}
+  }
+</style>
+</head>
+<body>
+
+<header id="header" class="">
+  <div class="wrap">
+    <nav>
+      <a href="file:///C:/Users/Alumne1x1/Downloads/sushi-kanji.html#" class="brand"><span class="mark">寛</span> SUSHI KANJI</a>
+      <div class="nav-links">
+        <a href="file:///C:/Users/Alumne1x1/Downloads/sushi-kanji.html#filosofia">Filosofia</a>
+        <a href="file:///C:/Users/Alumne1x1/Downloads/sushi-kanji.html#carta">Carta</a>
+        <a href="file:///C:/Users/Alumne1x1/Downloads/sushi-kanji.html#galeria">Galeria</a>
+        <a href="file:///C:/Users/Alumne1x1/Downloads/sushi-kanji.html#opinions">Opinions</a>
+        <a href="file:///C:/Users/Alumne1x1/Downloads/sushi-kanji.html#visita">Visita'ns</a>
+      </div>
+      <a href="file:///C:/Users/Alumne1x1/Downloads/sushi-kanji.html#visita" class="nav-cta">Reservar taula</a>
+    </nav>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-kanji">寛</div>
+  <div class="wrap" style="position:relative;">
+    <div class="hero-content">
+      <div class="eyebrow">Caldes de Montbui · Cuina japonesa</div>
+      <h1>L'art del<br><em>nigiri</em>, servit<br>amb calma.</h1>
+      <svg class="stroke-rule" viewBox="0 0 220 14"><path d="M2,7 C60,2 160,12 218,6"></path></svg>
+      <p class="lede">Peix fresc, arròs al punt exacte i un ambient pensat per allargar el sopar. Sushi Kanji porta a Caldes una taula on cada plat es serveix amb la mateixa cura amb què es prepara.</p>
+      <div class="hero-ctas">
+        <a href="file:///C:/Users/Alumne1x1/Downloads/sushi-kanji.html#visita" class="btn-primary">Reservar taula</a>
+        <a href="file:///C:/Users/Alumne1x1/Downloads/sushi-kanji.html#carta" class="btn-ghost">Veure la carta</a>
+      </div>
+    </div>
+  </div>
+  <div class="hero-rating">
+    <div class="stat"><b>4.6</b>/5 a Google</div>
+    <div class="div"></div>
+    <div class="stat"><b>300+</b>ressenyes</div>
+    <div class="div"></div>
+    <div class="stat"><b>20–30€</b>per persona</div>
+  </div>
+</section>
+
+<section class="philosophy" id="filosofia">
+  <div class="wrap">
+    <div class="section-head reveal in">
+      <div>
+        <div class="section-eyebrow">La nostra manera de fer</div>
+        <h2>Tres coses que no negociem</h2>
+      </div>
+      <p>El que els nostres comensals repeteixen, ressenya rere ressenya, és senzill: producte de veritat, ben tractat, i servit sense presses.</p>
+    </div>
+
+    <div class="phil-grid">
+      <div class="phil-card reveal in">
+        <span class="phil-num">01 — Producte</span>
+        <h3>El peix mana</h3>
+        <p>Als nostres nigiri, l'arròs no amaga el peix: és el peix qui desborda la bola. Salmó, tonyina i la resta de matèria primera arriben frescos cada dia perquè es notin.</p>
+      </div>
+      <div class="phil-card reveal in">
+        <span class="phil-num">02 — Ambient</span>
+        <h3>Un espai per respirar</h3>
+        <p>Local ampli, llum càlida i música tranquil·la. Pensat perquè un sopar de celebració i un dinar familiar es sentin igual de bé, sense necessitat d'aixecar la veu.</p>
+      </div>
+      <div class="phil-card reveal in">
+        <span class="phil-num">03 — Equilibri</span>
+        <h3>Alta cuina, preu just</h3>
+        <p>Plats a la carta des d'uns 25€ per persona i menús de migdia des de 14,95€ amb la mateixa exigència de producte. La qualitat no hauria de ser un luxe puntual.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="menu-section" id="carta">
+  <div class="wrap">
+    <div class="section-head reveal in">
+      <div>
+        <div class="section-eyebrow">Selecció de la carta</div>
+        <h2>Una carta extensa,<br>pensada per compartir</h2>
+      </div>
+      <p>Una mostra dels plats que més es repeteixen taula rere taula, de la nostra carta completa de ramen, nigiri, rolls i molt més.</p>
+    </div>
+
+    <div class="menu-columns">
+      <div class="reveal in">
+        <div class="menu-cat-title">Nigiri &amp; Sashimi</div>
+
+        <div class="menu-item">
+          <div>
+            <div class="menu-item-name">Nigiri de salmó flamejat</div>
+            <div class="menu-item-desc">2 peces, lleugerament cremat al moment</div>
+          </div>
+          <div class="menu-item-price">4,50€</div>
+        </div>
+        <div class="menu-item">
+          <div>
+            <div class="menu-item-name">Nigiri d'ikura</div>
+            <div class="menu-item-desc">2 peces, ous de salmó</div>
+          </div>
+          <div class="menu-item-price">6,95€</div>
+        </div>
+        <div class="menu-item">
+          <div>
+            <div class="menu-item-name">Sashimi variat</div>
+            <div class="menu-item-desc">9 peces · salmó, tonyina, hamachi</div>
+          </div>
+          <div class="menu-item-price">13,50€</div>
+        </div>
+        <div class="menu-item">
+          <div>
+            <div class="menu-item-name">Tataki de tonyina</div>
+            <div class="menu-item-desc">Marcat al punt</div>
+          </div>
+          <div class="menu-item-price">12,95€</div>
+        </div>
+      </div>
+
+      <div class="reveal in">
+        <div class="menu-cat-title">Per Compartir</div>
+
+        <div class="menu-item">
+          <div>
+            <div class="menu-item-name">Gyoza de llagostí</div>
+            <div class="menu-item-desc">Empanadillas fregides</div>
+          </div>
+          <div class="menu-item-price">8,95€</div>
+        </div>
+        <div class="menu-item">
+          <div>
+            <div class="menu-item-name">Takoyaki</div>
+            <div class="menu-item-desc">4 peces · les boletes de pop que tothom recomana</div>
+          </div>
+          <div class="menu-item-price">6,50€</div>
+        </div>
+        <div class="menu-item">
+          <div>
+            <div class="menu-item-name">Ebi tempura</div>
+            <div class="menu-item-desc">Langostino fregit, 4 unitats</div>
+          </div>
+          <div class="menu-item-price">8,95€</div>
+        </div>
+        <div class="menu-item">
+          <div>
+            <div class="menu-item-name">Roll trufa</div>
+            <div class="menu-item-desc">California roll · salmó, alvocat i salsa trufada</div>
+          </div>
+          <div class="menu-item-price">12,95€</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="menu-note reveal in">Sushi variat per compartir · des de 12 peces (salmó, tonyina, llagostí, dorada, vieira) — 16,95€</div>
+    <a href="file:///C:/Users/Alumne1x1/Downloads/sushi-kanji.html#" class="btn-ghost reveal in" style="display:inline-block;margin-top:28px;">Veure la carta completa</a>
+  </div>
+</section>
+
+<section class="gallery" id="galeria">
+  <div class="gallery-track">
+    <figure class="reveal in">
+      <img src="./Sushi Kanji — Cuina Japonesa, Caldes de Montbui_files/photo-1579871494447-9811cf80d66c" alt="Selecció de nigiri">
+      <figcaption>Nigiri — peix fresc diari</figcaption>
+    </figure>
+    <figure class="reveal in">
+      <img src="./Sushi Kanji — Cuina Japonesa, Caldes de Montbui_files/photo-1553621042-f6e147245754" alt="Sashimi de salmó">
+      <figcaption>Sashimi — tall fi</figcaption>
+    </figure>
+    <figure class="reveal in">
+      <img src="./Sushi Kanji — Cuina Japonesa, Caldes de Montbui_files/photo-1617196034796-73dfa7b1fd56" alt="Interior del restaurant">
+      <figcaption>Sala — ambient tranquil</figcaption>
+    </figure>
+    <figure class="reveal in">
+      <img src="./Sushi Kanji — Cuina Japonesa, Caldes de Montbui_files/photo-1611143669185-af224c5e3252" alt="Gyozas i plats calents">
+      <figcaption>Calents — gyozas de la casa</figcaption>
+    </figure>
+  </div>
+</section>
+
+<section class="testimonials" id="opinions">
+  <div class="wrap">
+    <div class="section-head reveal in">
+      <div>
+        <div class="section-eyebrow">Veus dels clients</div>
+        <h2>El que diuen<br>les taules de Kanji</h2>
+      </div>
+      <p>Una selecció de ressenyes reals dels nostres clients a Google.</p>
+    </div>
+
+    <div class="test-rail">
+      <div class="test-card reveal in">
+        <div class="test-quote"><span class="qm">"</span>Tenen el tamany just i el peix desborda. Tornarem segur.<span class="qm">"</span></div>
+        <div class="test-author"><span>Miquel Blanes</span><span class="stars">★★★★★</span></div>
+      </div>
+      <div class="test-card reveal in">
+        <div class="test-quote"><span class="qm">"</span>Local gran i espaiós, amb clar accent japonès, menjar deliciós.<span class="qm">"</span></div>
+        <div class="test-author"><span>Miquel Tur</span><span class="stars">★★★★★</span></div>
+      </div>
+      <div class="test-card reveal in">
+        <div class="test-quote"><span class="qm">"</span>Música elegant, ideal per menjar a gust i conversar. Bon producte i tracte excel·lent.<span class="qm">"</span></div>
+        <div class="test-author"><span>Elisabet R.</span><span class="stars">★★★★★</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="visit" id="visita">
+  <div class="wrap">
+    <div class="visit-grid">
+      <div class="visit-info reveal in">
+        <h2>Reserva la teva taula</h2>
+
+        <div class="visit-row">
+          <div class="visit-label">Adreça</div>
+          <div class="visit-value"><strong>Caldes de Montbui</strong><br>Vallès Oriental, Catalunya</div>
+        </div>
+        <div class="visit-row">
+          <div class="visit-label">Horari</div>
+          <div class="visit-value">
+            <strong>Dimarts – Diumenge</strong><br>
+            13:00 – 16:00 · 20:00 – 23:00<br>
+            Dilluns tancat
+          </div>
+        </div>
+        <div class="visit-row">
+          <div class="visit-label">Telèfon</div>
+          <div class="visit-value"><strong>93 XXX XX XX</strong></div>
+        </div>
+        <div class="visit-row">
+          <div class="visit-label">A domicili</div>
+          <div class="visit-value">Servei de recollida i comanda a domicili disponible</div>
+        </div>
+
+        <div class="visit-cta">
+          <a href="tel:+34900000000" class="btn-primary">Trucar per reservar</a>
+        </div>
+      </div>
+      <div class="visit-map">
+        <iframe loading="lazy" referrerpolicy="no-referrer-when-downgrade" src="./Sushi Kanji — Cuina Japonesa, Caldes de Montbui_files/maps.html">
+        </iframe>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="final-cta">
+  <div class="final-cta-kanji">寛</div>
+  <div class="wrap final-cta-inner">
+    <h2>Una taula t'espera<br>a <em>Sushi Kanji</em>.</h2>
+    <p>Sense presses, amb producte de veritat i el tracte que ens recomana cada client que torna.</p>
+    <a href="file:///C:/Users/Alumne1x1/Downloads/sushi-kanji.html#visita" class="btn-primary">Reservar ara</a>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="footer-grid">
+      <div class="footer-brand">寛 SUSHI <span>KANJI</span></div>
+      <div class="footer-links">
+        <a href="file:///C:/Users/Alumne1x1/Downloads/sushi-kanji.html#filosofia">Filosofia</a>
+        <a href="file:///C:/Users/Alumne1x1/Downloads/sushi-kanji.html#carta">Carta</a>
+        <a href="file:///C:/Users/Alumne1x1/Downloads/sushi-kanji.html#galeria">Galeria</a>
+        <a href="file:///C:/Users/Alumne1x1/Downloads/sushi-kanji.html#opinions">Opinions</a>
+        <a href="file:///C:/Users/Alumne1x1/Downloads/sushi-kanji.html#visita">Visita'ns</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 Sushi Kanji · Caldes de Montbui</span>
+      <span>Cuina japonesa des de fa més de 2 anys</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+  // header scroll state
+  const header = document.getElementById('header');
+  window.addEventListener('scroll', () => {
+    header.classList.toggle('scrolled', window.scrollY > 40);
+  }, {passive:true});
+
+  // reveal on scroll
+  const revealEls = document.querySelectorAll('.reveal');
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if(e.isIntersecting){
+        e.target.classList.add('in');
+        io.unobserve(e.target);
+      }
+    });
+  }, {threshold:0.15});
+  revealEls.forEach(el => io.observe(el));
+</script>
+
+
+
+</body></html>
